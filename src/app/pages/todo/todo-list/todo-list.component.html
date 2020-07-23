@@ -1,0 +1,47 @@
+<div class="card-body">
+  <form  method="post" class="d-flex justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body text-center">
+        <div class="form-group">
+          <label for="task">Task</label>
+          <input type="text" name="name" id="task" class="form-control">
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">
+          Add Task
+        </button>
+      </div>
+    </div>
+  </form>
+  <div class="container">
+    <div class="card mt-4">
+      <div class="card-title">
+        <h2 class="text-center mt-2">Current Tasks</h2>
+      </div>
+
+      <div class="card-body">
+        <table class="table table-striped task-table">
+          <thead>
+          <th>Task</th>
+          <th>&nbsp;</th>
+          </thead>
+
+          <tbody>
+          <tr>
+            <td class="table-text">
+              <div>Task</div>
+            </td>
+
+            <td>
+              <form  method="POST">
+
+                <button class="btn btn-danger">Delete Task</button>
+              </form>
+            </td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
