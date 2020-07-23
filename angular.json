@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "angular-laravel-awesome-fe"
+    }
+  },
+  "defaultProject": "angular-laravel-awesome-fe",
+  "cli": {
+    "analytics": "a3325c5d-cb93-47a6-853a-2669cb96ccdd"
+  }
 }
