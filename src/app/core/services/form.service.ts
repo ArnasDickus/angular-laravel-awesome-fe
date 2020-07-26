@@ -12,7 +12,7 @@ export class FormService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
 
   public sendData(form: NgForm): Promise <any>{
-    console.log(form);
+    console.log(form.value);
     return this.http.post('http://127.0.0.1:8000/api/items', JSON.stringify(form.value), {headers: this.headers})
       .toPromise()
       .then(res => res || [])

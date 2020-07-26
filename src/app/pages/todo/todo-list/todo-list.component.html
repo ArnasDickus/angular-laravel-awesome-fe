@@ -1,17 +1,18 @@
 <div class="card-body">
-  <form  method="post" class="d-flex justify-content-center">
+  <form [formGroup]="form" (ngSubmit)="onSubmit()" method="post" class="d-flex justify-content-center">
     <div class="card" style="width: 18rem;">
       <div class="card-body text-center">
         <div class="form-group">
           <label for="task">Task</label>
-          <input type="text" name="name" id="task" class="form-control">
+          <input formControlName="task" type="text" name="name" id="task" class="form-control">
         </div>
-        <button type="submit" class="btn btn-primary mt-2">
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="!this.form.valid">
           Add Task
         </button>
       </div>
     </div>
   </form>
+
   <div class="container">
     <div class="card mt-4">
       <div class="card-title">
@@ -32,7 +33,7 @@
             </td>
 
             <td>
-              <form  method="POST">
+              <form  (ngSubmit)="onDelete($event)">
 
                 <button class="btn btn-danger">Delete Task</button>
               </form>
