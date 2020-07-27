@@ -11,6 +11,8 @@ import { TodoItems } from '../../../core/interfaces/todo-items';
 export class TodoListComponent implements OnInit {
   public form: any;
   public tasks: TodoItems[];
+  public deleteTaskSuccessMessage: boolean;
+  public deleteTaskFailedMessage: boolean;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -24,12 +26,15 @@ export class TodoListComponent implements OnInit {
   }
 
   public onSubmit(): void {
-    this.todoService.receiveFormData(this.form.value);
+    this.todoService.sendFormData(this.form.value);
+    this.displayTasks();
     this.form.reset();
   }
 
-  public onDelete(event): void {
-    console.log(event);
+  public onDelete(id): void {
+    this.todoService.deleteTask(id);
+    this.todoService.deleteTaskSuccessMessage = this.deleteTaskSuccessMessage;
+    this.todoService.deleteTaskFailedMessage = this.deleteTaskFailedMessage;
   }
 
   public buildTaskForm(): void {
@@ -40,7 +45,7 @@ export class TodoListComponent implements OnInit {
 
   public displayTasks(): void {
     this.todoService.fetchFormData().subscribe((task: TodoItems[]) => {
-      this.tasks = task;
+        this.tasks = task;
     });
   }
 }

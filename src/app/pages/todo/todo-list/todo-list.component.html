@@ -14,6 +14,22 @@
   </form>
 
   <div class="container">
+
+
+    <div *ngIf="deleteTaskSuccessMessage" class="alert alert-success alert-dismissible fade show" role="alert">
+      <strong>Message deleted successfully</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
+    <div *ngIf="deleteTaskFailedMessage" class="alert alert-danger alert-dismissible fade show" role="alert">
+      <strong>Something gone terribly wrong</strong>
+      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+
     <div class="card mt-4">
       <div class="card-title">
         <h2 class="text-center mt-2">Current Tasks</h2>
@@ -33,10 +49,7 @@
             </td>
 
             <td>
-              <form  (ngSubmit)="onDelete($event)">
-
-                <button class="btn btn-danger">Delete Task</button>
-              </form>
+                <button class="btn btn-danger" (click)="onDelete(task.id)">Delete Task</button>
             </td>
           </tr>
           </tbody>
