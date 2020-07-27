@@ -22,14 +22,14 @@
       <div class="card-body">
         <table class="table table-striped task-table">
           <thead>
-          <th>Task</th>
-          <th>&nbsp;</th>
+            <th>Task</th>
+            <th>&nbsp;</th>
           </thead>
 
           <tbody>
-          <tr>
+          <tr *ngFor="let task of tasks">
             <td class="table-text">
-              <div>Task</div>
+              <div>{{task.task}}</div>
             </td>
 
             <td>
