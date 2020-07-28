@@ -9,6 +9,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { LoginComponent } from './pages/login/login.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
     HeaderComponent,
     FooterComponent,
     NotFoundComponent,
-    TodoListComponent
+    TodoListComponent,
+    RegisterComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
