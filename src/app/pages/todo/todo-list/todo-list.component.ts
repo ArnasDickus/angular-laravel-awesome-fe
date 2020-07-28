@@ -27,14 +27,23 @@ export class TodoListComponent implements OnInit {
 
   public onSubmit(): void {
     this.todoService.sendFormData(this.form.value);
-    this.displayTasks();
+
+    // TODO Replace setTimeout with waiting for deleteTask
+    setTimeout((() => {
+      this.displayTasks();
+    }), 1000);
     this.form.reset();
   }
 
   public onDelete(id): void {
     this.todoService.deleteTask(id);
-    this.todoService.deleteTaskSuccessMessage = this.deleteTaskSuccessMessage;
-    this.todoService.deleteTaskFailedMessage = this.deleteTaskFailedMessage;
+    // TODO Replace setTimeout with waiting for deleteTask
+    setTimeout((() => {
+      this.displayTasks();
+    }), 1000);
+
+
+
   }
 
   public buildTaskForm(): void {

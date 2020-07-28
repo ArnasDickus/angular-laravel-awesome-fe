@@ -7,8 +7,6 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class TodoService {
-  public deleteTaskSuccessMessage: boolean;
-  public deleteTaskFailedMessage: boolean;
 
   private headers = new HttpHeaders({'Content-Type': 'application/json'});
   private todoUrl = 'http://127.0.0.1:8000/api/todo';
@@ -33,11 +31,9 @@ export class TodoService {
     this.http.delete(todoUrlDelete, {headers: this.headers})
       .subscribe(
         (response) => {
-          this.deleteTaskSuccessMessage = true;
-          // console.log(`response received ${response}`);
+          console.log('Success');
         },
       (error) => {
-          this.deleteTaskFailedMessage = true;
           console.error(error);
       }
       );
