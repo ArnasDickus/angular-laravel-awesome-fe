@@ -1,6 +1,8 @@
 # AngularLaravelAwesomeFe
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 10.1.0-next.2.
+A application that tries to show the power of Angular and Laravel by incomperating more and more difficult tasks.
+[Back-end](https://github.com/ArnasDickus/angular-laravel-awesome-be/edit/master)
+
 
 ## Development server
 
