@@ -6,12 +6,14 @@ import {AllRoutes} from './core/enums/allroutes.enum';
 import {RegisterComponent} from './pages/register/register.component';
 import {LoginComponent} from './pages/login/login.component';
 import {AuthenticationComponent} from './core/layouts/authentication/authentication.component';
+import {ForgotPasswordComponent} from './pages/forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', component: AuthenticationComponent,
     children: [
       { path: AllRoutes.REGISTER, component: RegisterComponent},
       { path: AllRoutes.LOGIN, component: LoginComponent },
+      { path: AllRoutes.FORGOTPASSWORD, component: ForgotPasswordComponent }
     ]},
 
   { path: AllRoutes.ADMIN,

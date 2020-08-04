@@ -12,6 +12,7 @@ import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AuthenticationComponent } from './core/layouts/authentication/authentication.component';
+import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AuthenticationComponent } from './core/layouts/authentication/authentic
     RegisterComponent,
     LoginComponent,
     AuthenticationComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,

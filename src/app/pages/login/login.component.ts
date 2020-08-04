@@ -11,6 +11,7 @@ import { AuthenticationService } from '../../core/services/authentication/authen
 })
 export class LoginComponent implements OnInit {
   public form: any;
+  public forgotPasswordRoute = `../${AllRoutes.FORGOTPASSWORD}`;
 
   constructor(
     private router: Router,

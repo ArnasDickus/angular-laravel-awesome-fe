@@ -1,1 +1,29 @@
-<h1>Register Component</h1>
+<form [formGroup]="form" class="mat-card p-5" (ngSubmit)="saveForm()">
+  <h1 class="h3 mb-3 font-weight-normal text-center"> Register </h1>
+  <p class="text-center"> If you forgotten your password you can reset it here  </p>
+
+  <div class="mb-2">
+    <label for="inputName">Name</label>
+    <input formControlName="name" type="text" id="inputName" class="form-control" placeholder="Name">
+  </div>
+
+  <div class="mb-2">
+    <label for="inputEmail">Email</label>
+    <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address">
+  </div>
+
+  <div class="mb-2">
+    <label for="inputPassword">Password</label>
+    <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+  </div>
+
+  <div class="mb-2">
+    <label for="inputRepeatPassword">Repeat Password</label>
+    <input formControlName="repeatPassword" type="password" id="inputRepeatPassword" class="form-control"
+           placeholder="Repeat password">
+  </div>
+
+  <button class="btn btn-success btn-block" type="submit">
+    <i class="fas fa-sign-in-alt"></i> Sign in
+  </button>
+</form>
