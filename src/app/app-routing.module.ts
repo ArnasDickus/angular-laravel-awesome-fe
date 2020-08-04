@@ -5,11 +5,20 @@ import {NotFoundComponent} from './components/not-found/not-found.component';
 import {AllRoutes} from './core/enums/allroutes.enum';
 import {RegisterComponent} from './pages/register/register.component';
 import {LoginComponent} from './pages/login/login.component';
+import {AuthenticationComponent} from './core/layouts/authentication/authentication.component';
 
 const routes: Routes = [
-  { path: AllRoutes.TODO, component: TodoListComponent},
-  { path: AllRoutes.REGISTER, component: RegisterComponent},
-  { path: AllRoutes.LOGIN, component: LoginComponent },
+  { path: '', component: AuthenticationComponent,
+    children: [
+      { path: AllRoutes.REGISTER, component: RegisterComponent},
+      { path: AllRoutes.LOGIN, component: LoginComponent },
+    ]},
+
+  { path: AllRoutes.ADMIN,
+    children: [
+      { path: AllRoutes.TODO, component: TodoListComponent},
+    ] },
+
   { path: '**', component: NotFoundComponent }
 ];
 

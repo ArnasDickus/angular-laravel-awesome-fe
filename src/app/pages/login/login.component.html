@@ -1,1 +1,30 @@
-<p>login works!</p>
+<div class="container">
+  <form [formGroup]="form" class="mat-card p-5" (ngSubmit)="saveForm()">
+    <h1 class="h3 mb-3 font-weight-normal text-center"> Sign in</h1>
+    <div class="button-container">
+      <button class="btn facebook-btn social-btn mr-2" type="button"><span><i class="fab fa-facebook-f"></i> Sign in with Facebook</span> </button>
+      <button class="btn google-btn social-btn" type="button"><span><i class="fab fa-google-plus-g"></i> Sign in with Google+</span> </button>
+    </div>
+    <p class="text-center"> OR  </p>
+    <div class="mb-2">
+      <label for="inputEmail">Email</label>
+      <input formControlName="email" type="email" id="inputEmail" class="form-control" placeholder="Email address">
+    </div>
+
+    <div class="mb-2">
+      <label for="inputPassword">Password</label>
+      <input formControlName="password" type="password" id="inputPassword" class="form-control" placeholder="Password">
+    </div>
+
+    <button class="btn btn-success btn-block" type="submit">
+      <i class="fas fa-sign-in-alt"></i> Sign in
+    </button>
+
+    <a  href="#" id="forgot_pswd">Forgot password?</a>
+    <hr>
+    <!-- <p>Don't have an account!</p>  -->
+    <button class="btn btn-primary btn-block" (click)="redirectToRegister()" type="button" id="btn-signup">
+      <i class="fas fa-user-plus"></i> Sign up New Account
+    </button>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+@import './src/styles/global/variables';
+
+.button-container {
+  color: $white;
+}
+
+.facebook-btn {
+  background-color: $facebook_blue;
+  color: $white;
+}
+
+.google-btn {
+  background-color: $google_red;
+  color: $white;
+}
