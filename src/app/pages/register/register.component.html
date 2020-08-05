@@ -23,7 +23,7 @@
            placeholder="Repeat password">
   </div>
 
-  <button class="btn btn-success btn-block" type="submit">
+  <button class="btn btn-success btn-block" type="submit" [disabled]="!form.valid">
     <i class="fas fa-sign-in-alt"></i> Sign in
   </button>
 </form>
