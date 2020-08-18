@@ -5,7 +5,18 @@
     "outDir": "./out-tsc/spec",
     "types": [
       "jasmine"
-    ]
+    ],
+    "baseUrl": "",
+    "paths": {
+      "@features/*": ["./src/app/features/*"],
+      "@shared/*": ["./src/app/shared/*"],
+      "@core/*": ["./src/app/core/*"],
+      "@environments/*": ["./src/environments/*"],
+      "@vendor/*": ["./src/vendor/*"],
+      "@node_modules/*": ["./node_modules/*"],
+      "@angular/*": ["./node_modules/@angular/*"],
+      "@test/*": ["./src/test/*"]
+    }
   },
   "files": [
     "src/test.ts",

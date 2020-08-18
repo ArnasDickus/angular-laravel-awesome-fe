@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
-import { TodoService } from '../../../../core/services/todo/todo.service';
-import { TodoItems } from '../../../../core/interfaces/todo-items';
+import { TodoItems } from '@core/interfaces/todo-items';
+import {TodoService} from '@core/services/todo/todo.service';
 
 @Component({
   selector: 'app-todo-list',
