@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AllRoutes } from '../../core/enums/allroutes.enum';
+import { AllRoutes } from '../../enums/allroutes.enum';
 
 @Component({
   selector: 'app-header',

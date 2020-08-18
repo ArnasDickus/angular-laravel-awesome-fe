@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {AllRoutes} from '../../core/enums/allroutes.enum';
+import { AllRoutes } from '../../../../core/enums/allroutes.enum';
 import {Router} from '@angular/router';
 import {FormBuilder, Validators} from '@angular/forms';
-import { AuthenticationService } from '../../core/services/authentication/authentication.service';
+import { AuthenticationService } from '../../../../core/services/authentication/authentication.service';
 
 @Component({
   selector: 'app-login',

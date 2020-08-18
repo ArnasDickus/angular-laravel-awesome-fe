@@ -3,5 +3,6 @@ export enum AllRoutes {
   REGISTER = 'register',
   FORGOTPASSWORD = 'forgot-password',
   LOGIN = 'login',
-  ADMIN = 'admin'
+  ADMIN = 'admin',
+  AUTH = 'auth'
 }

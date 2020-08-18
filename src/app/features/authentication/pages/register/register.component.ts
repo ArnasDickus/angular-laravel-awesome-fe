@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, Validators} from '@angular/forms';
-import {AuthenticationService} from '../../core/services/authentication/authentication.service';
-import { MatchPasswords } from '../../core/validators/match-passwords';
+import { AuthenticationService  } from '../../../../core/services/authentication/authentication.service';
+import { MatchPasswords } from '../../../../core/validators/match-passwords';
 
 @Component({
   selector: 'app-register',
