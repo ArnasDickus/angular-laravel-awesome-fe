@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -6,10 +7,26 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent implements OnInit {
+  public form: FormGroup;
 
-  constructor() { }
+  constructor(
+    private formBuilder: FormBuilder
+  ) {
 
-  ngOnInit(): void {
   }
 
+  public ngOnInit(): void {
+    this.buildForm();
+  }
+
+  public onChange(): void {
+    console.log(this.form.value.search);
+  }
+
+  private buildForm(): void {
+    this.form = this.formBuilder.group({
+      search: ['', [
+      ]],
+    });
+  }
 }

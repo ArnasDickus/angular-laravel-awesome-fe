@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { BreakingBadApiRoutingModule } from './breaking-bad-api-routing.module';
 import { HomeComponent } from './pages/home/home.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -9,7 +10,8 @@ import { HomeComponent } from './pages/home/home.component';
   declarations: [HomeComponent],
   imports: [
     CommonModule,
-    BreakingBadApiRoutingModule
+    BreakingBadApiRoutingModule,
+    ReactiveFormsModule
   ]
 })
 // @ts-ignore
