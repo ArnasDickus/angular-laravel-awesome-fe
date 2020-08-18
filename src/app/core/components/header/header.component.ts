@@ -7,9 +7,9 @@ import { AllRoutes } from '../../enums/allroutes.enum';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  public todoRoute = `${AllRoutes.ADMIN}/${AllRoutes.TODO}`;
-  public registerRoute = AllRoutes.REGISTER;
-  public loginRoute = AllRoutes.LOGIN;
+  public todoRoute = AllRoutes.TODO;
+  public registerRoute = `${AllRoutes.AUTH}/${AllRoutes.REGISTER}`;
+  public loginRoute = `${AllRoutes.AUTH}/${AllRoutes.LOGIN}`;
 
   constructor() { }
 

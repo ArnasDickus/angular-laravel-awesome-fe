@@ -4,20 +4,27 @@ import { ForgotPasswordComponent } from './pages/forgot-password/forgot-password
 import { LoginComponent } from './pages/login/login.component';
 import { AllRoutes } from '../../core/enums/allroutes.enum';
 import { RegisterComponent } from './pages/register/register.component';
+import { AuthenticationComponent } from '../../shared/layouts/authentication/authentication.component';
 
 const routes: Routes = [
   {
-    path: AllRoutes.FORGOTPASSWORD,
-    component: ForgotPasswordComponent,
+    path: '',
+    component: AuthenticationComponent,
+    children: [
+      {
+        path: AllRoutes.FORGOTPASSWORD,
+        component: ForgotPasswordComponent,
+      },
+      {
+        path: AllRoutes.LOGIN,
+        component: LoginComponent,
+      },
+      {
+        path: AllRoutes.REGISTER,
+        component: RegisterComponent
+      }
+    ]
   },
-  {
-    path: AllRoutes.LOGIN,
-    component: LoginComponent,
-  },
-  {
-    path: AllRoutes.REGISTER,
-    component: RegisterComponent
-  }
 ];
 
 

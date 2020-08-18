@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AllRoutes } from './core/enums/allroutes.enum';
+import { AllRoutes } from '@core/enums/allroutes.enum';
 
 const routes: Routes = [
   {

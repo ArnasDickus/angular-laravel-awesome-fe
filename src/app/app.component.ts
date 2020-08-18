@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import {NgForm} from '@angular/forms';
-import { FormService } from './core/services/form.service';
+import { FormService } from '@core/services/form.service';
 
 @Component({
   selector: 'app-root',
