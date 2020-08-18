@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
-import { NotFoundComponent } from './components/not-found/not-found.component';
+import { NotFoundComponent } from './components/404/404.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TodoListComponent } from './pages/todo/todo-list/todo-list.component';
 import { RegisterComponent } from './pages/register/register.component';
