@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -8,7 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
   public form: FormGroup;
-
+  public selectedValues: string[] = ['val1', 'val2'];
   constructor(
     private formBuilder: FormBuilder
   ) {
