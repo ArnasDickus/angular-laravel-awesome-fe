@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BreakingBadApiService } from '@core/services/breaking-bad-api/breaking-bad-api.service';
+import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 
 @Component({
   selector: 'app-search-form',
@@ -8,26 +9,24 @@ import { BreakingBadApiService } from '@core/services/breaking-bad-api/breaking-
   styleUrls: ['./search-form.component.scss']
 })
 export class SearchFormComponent implements OnInit {
-  public form: FormGroup;
-  @Output() autoSearch: EventEmitter<string> = new EventEmitter<string>();
-  @Output() groupFilters: EventEmitter<any> = new EventEmitter<any>();
+  // @Output() autoSearch: EventEmitter<string> = new EventEmitter<string>();
+  // @Output() groupFilters: EventEmitter<any> = new EventEmitter<any>();
+  @Output() searchEvent = new EventEmitter<string>();
   public searchQuery = '';
+  public form: FormGroup;
+  public isDataLoaded: boolean;
 
   constructor(
-    private formBuilder: FormBuilder,
-    private breakingBadApiService: BreakingBadApiService
+    private formBuilder: FormBuilder
   ) { }
 
   public ngOnInit(): void {
     this.buildForm();
   }
 
+
+
   public onChange(filters: any): void {
-    Object.keys(filters).forEach(key => filters[key] === '' ? delete filters[key] : key);
-    this.groupFilters.emit(filters);
-
-    console.log(this.groupFilters);
-
     // TODO Every time there is a change. I need to get this.form.value
     // Create search: It should contain:
     // 1) Search by Name.
@@ -46,15 +45,4 @@ export class SearchFormComponent implements OnInit {
 
     });
   }
-
-  // private fetchData(): void {
-  //   this.isDataLoaded = false;
-  //   this.breakingBadApiService.fetchByName(this.searchQuery).subscribe((task: Characters[]) => {
-  //     if (task) {
-  //       this.isDataLoaded = true;
-  //       this.fetchedData = task;
-  //     }
-  //   });
-  // }
-
 }
