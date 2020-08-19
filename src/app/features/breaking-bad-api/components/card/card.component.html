@@ -7,8 +7,16 @@
         </p-header>
 
         <p-accordion>
-          <p-accordionTab header="Header 1" [selected]="true">
-            Content 1
+          <p-accordionTab header="Spoilers" [selected]="false">
+            <p><span class="font-weight-bold">Birthday:</span> {{card.birthday}} </p>
+            <span class="font-weight-bold">Occupation</span>
+            <ul>
+              <li *ngFor="let occupation of card.occupation">
+                {{occupation}}
+              </li>
+            </ul>
+
+            <p><span class="font-weight-bold">Status:</span> {{ card.status }}</p>
           </p-accordionTab>
         </p-accordion>
       </p-card>
