@@ -12,6 +12,7 @@ export class HomeComponent implements OnInit {
   public fetchedData: Characters[];
   public form: FormGroup;
   public searchQuery = '';
+  public isDataLoaded = false;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -45,8 +46,12 @@ export class HomeComponent implements OnInit {
   }
 
   private fetchData(): void {
+    this.isDataLoaded = false;
     this.breakingBadApiService.fetchFormData(this.searchQuery).subscribe((task: Characters[]) => {
-      this.fetchedData = task;
+      if (task) {
+        this.isDataLoaded = true;
+        this.fetchedData = task;
+      }
     });
   }
 }

@@ -6,6 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CardComponent } from './components/card/card.component';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
+import { SharedModule } from '../../shared/shared.module';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { ButtonModule } from 'primeng/button';
     BreakingBadApiRoutingModule,
     ReactiveFormsModule,
     CardModule,
-    ButtonModule
+    ButtonModule,
+    SharedModule
   ]
 })
 // @ts-ignore
