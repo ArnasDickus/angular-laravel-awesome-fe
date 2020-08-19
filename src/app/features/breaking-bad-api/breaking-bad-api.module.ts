@@ -8,10 +8,11 @@ import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { SharedModule } from '../../shared/shared.module';
 import { AccordionModule } from 'primeng';
+import { SearchFormComponent } from './components/search-form/search-form.component';
 
 
 @NgModule({
-  declarations: [HomeComponent, CardComponent],
+  declarations: [HomeComponent, CardComponent, SearchFormComponent, SearchFormComponent],
   imports: [
     CommonModule,
     BreakingBadApiRoutingModule,

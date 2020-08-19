@@ -4,25 +4,7 @@
   </div>
 
   <div class="text-center pt-5 container">
-    <form [formGroup]="form">
-      <input
-        formControlName="searchByName"
-        type="text"
-        class="form-control"
-        placeholder="Search By Name"
-        (input)="onChange()" >
-
-      <p-accordion>
-        <p-accordionTab header="Advanced search" [selected]="false">
-          <input
-            formControlName="searchByNickname"
-            type="text"
-            class="form-control"
-            placeholder="Search By Nickname"
-            (input)="onChange()" >
-        </p-accordionTab>
-      </p-accordion>
-    </form>
+    <app-search-form></app-search-form>
   </div>
 
   <div class="container mt-5">
