@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Characters } from '@core/interfaces/breaking-bad-api/characters';
+import { Observable } from '@node_modules/rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -11,9 +13,9 @@ export class BreakingBadApiService {
   constructor(
     private http: HttpClient
   ) {
-    this.fetchFormData();
+    this.fetchFormData('');
   }
-  public fetchFormData(): any {
-    return this.http.get(`${this.url}${this.characters}`);
+  public fetchFormData(query): Observable<Characters[]> {
+    return this.http.get<Characters[]>(`${this.url}${this.characters}?name=${query}`);
   }
 }

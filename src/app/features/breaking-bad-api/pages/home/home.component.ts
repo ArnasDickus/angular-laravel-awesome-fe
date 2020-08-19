@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { BreakingBadApiService } from '@core/services/breaking-bad-api/breaking-bad-api.service';
 import { Characters } from '@core/interfaces/breaking-bad-api/characters';
@@ -11,6 +11,7 @@ import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 export class HomeComponent implements OnInit {
   public fetchedData: Characters[];
   public form: FormGroup;
+  public searchQuery = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -21,16 +22,18 @@ export class HomeComponent implements OnInit {
 
   public ngOnInit(): void {
     this.buildForm();
-    this.breakingBadApiService.fetchFormData().subscribe((task: Characters[]) => {
-      this.fetchedData = task;
-    });
+    this.fetchData();
   }
 
   public onChange(): void {
-    console.log(this.form.value.search);
-    if (this.form.value.search >= 3) {
+    if (this.form.value.search.length >= 3) {
+      this.searchQuery = this.form.value.search;
+      this.fetchData();
+    }
 
-      // this.characters.filter
+    if (this.form.value.search.length === 0) {
+      this.searchQuery = '';
+      this.fetchData();
     }
   }
 
@@ -40,4 +43,11 @@ export class HomeComponent implements OnInit {
       ]],
     });
   }
+
+  private fetchData(): void {
+    this.breakingBadApiService.fetchFormData(this.searchQuery).subscribe((task: Characters[]) => {
+      this.fetchedData = task;
+    });
+  }
 }
+
