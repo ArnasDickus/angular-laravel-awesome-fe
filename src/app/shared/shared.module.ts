@@ -4,7 +4,7 @@ import { AuthenticationComponent } from './layouts/authentication/authentication
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner.component';
 import { AccordionModule } from 'primeng/accordion';
-
+import { RadioButtonModule } from 'primeng/radiobutton';
 
 @NgModule({
   declarations: [AuthenticationComponent, SpinnerComponent],
@@ -14,7 +14,8 @@ import { AccordionModule } from 'primeng/accordion';
   imports: [
     CommonModule,
     RouterModule,
-    AccordionModule
+    AccordionModule,
+    RadioButtonModule
   ]
 })
 // @ts-ignore

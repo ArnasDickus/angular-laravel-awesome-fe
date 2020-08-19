@@ -13,9 +13,9 @@ export class BreakingBadApiService {
   constructor(
     private http: HttpClient
   ) {
-    this.fetchFormData('');
+    this.fetchByName('');
   }
-  public fetchFormData(query): Observable<Characters[]> {
+  public fetchByName(query): Observable<Characters[]> {
     return this.http.get<Characters[]>(`${this.url}${this.characters}?name=${query}`);
   }
 }
