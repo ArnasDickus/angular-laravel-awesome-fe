@@ -22,11 +22,13 @@ export class SearchFormComponent implements OnInit {
     this.buildForm();
   }
 
-  public onChange(): void {
-    console.log('change');
+  public onChange(filters: any): void {
+    Object.keys(filters).forEach(key => filters[key] === '' ? delete filters[key] : key);
+    this.groupFilters.emit(filters);
+
+    console.log(this.groupFilters);
 
     // TODO Every time there is a change. I need to get this.form.value
-    console.log(this.form.value);
     // Create search: It should contain:
     // 1) Search by Name.
     // 2) Search by Nickname
@@ -43,11 +45,6 @@ export class SearchFormComponent implements OnInit {
       searchByNickname: [''],
 
     });
-  }
-
-  private search(filters: any): void {
-    Object.keys(filters).forEach(key => filters[key] === '' ? delete filters[key] : key);
-    this.groupFilters.emit(filters);
   }
 
   // private fetchData(): void {

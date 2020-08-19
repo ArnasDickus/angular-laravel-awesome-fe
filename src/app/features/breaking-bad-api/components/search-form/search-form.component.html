@@ -1,19 +1,23 @@
 <form [formGroup]="form">
-  <input
-    formControlName="searchByName"
-    type="text"
-    class="form-control"
-    placeholder="Search By Name"
-    (input)="onChange()" >
+  <label>
+    <input
+      formControlName="searchByName"
+      type="text"
+      class="form-control"
+      placeholder="Search By Name"
+      (input)="onChange(form.value)" >
+  </label>
 
   <p-accordion>
     <p-accordionTab header="Advanced search" [selected]="false">
-      <input
-        formControlName="searchByNickname"
-        type="text"
-        class="form-control"
-        placeholder="Search By Nickname"
-        (input)="onChange()" >
+      <label>
+        <input
+          formControlName="searchByNickname"
+          type="text"
+          class="form-control"
+          placeholder="Search By Nickname"
+          (input)="onChange(form.value)" >
+      </label>
     </p-accordionTab>
   </p-accordion>
 </form>
