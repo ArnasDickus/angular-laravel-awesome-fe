@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 
 @Component({
   selector: 'app-card',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
+  @Input() public fetchedData: Characters[];
 
   constructor() { }
 
   ngOnInit(): void {
+    setTimeout(() => {
+      console.log(this.fetchedData);
+    }, 2000);
   }
 
 }

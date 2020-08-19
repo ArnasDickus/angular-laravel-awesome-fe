@@ -1,9 +1,11 @@
-<p-card header="Advanced Card" subheader="Card Subheader" [style]="{width: '360px'}" styleClass="p-card-shadow">
-  <p-header>
-<!--    <img alt="Card" src="assets/showcase/images/usercard.png">-->
-  </p-header>
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore sed consequuntur error repudiandae numquam deserunt
-    quisquam repellat libero asperiores earum nam nobis, culpa ratione quam perferendis esse, cupiditate neque quas!
-  </p>
-
-</p-card>
+<ng-container *ngIf="fetchedData">
+  <div class="row">
+    <div *ngFor="let card of fetchedData" class="col-4 mb-5">
+      <p-card  [header]="card.name" [subheader]="card.nickname" [style]="{width: '360px'}" styleClass="p-card-shadow">
+        <p-header>
+          <img [alt]="card.name" [src]="card.img" class="card__img">
+        </p-header>
+      </p-card>
+    </div>
+  </div>
+</ng-container>

@@ -6,6 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class BreakingBadApiService {
   private url = 'https://www.breakingbadapi.com/api/';
+  private characters = 'characters';
 
   constructor(
     private http: HttpClient
@@ -13,6 +14,6 @@ export class BreakingBadApiService {
     this.fetchFormData();
   }
   public fetchFormData(): any {
-    return this.http.get(this.url);
+    return this.http.get(`${this.url}${this.characters}`);
   }
 }
