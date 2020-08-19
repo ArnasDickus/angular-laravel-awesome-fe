@@ -13,12 +13,14 @@
         (input)="onChange()" >
     </form>
   </div>
+
   <div class="container mt-5">
     <ng-container *ngIf="!isDataLoaded">
       <app-spinner></app-spinner>
     </ng-container>
 
-    <app-card [fetchedData]="fetchedData"
-    ></app-card>
+    <app-card
+      [fetchedData]="fetchedData">
+    </app-card>
   </div>
 </div>

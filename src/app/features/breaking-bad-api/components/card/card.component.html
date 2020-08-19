@@ -5,6 +5,12 @@
         <p-header>
           <img [alt]="card.name" [src]="card.img" class="card__img">
         </p-header>
+
+        <p-accordion>
+          <p-accordionTab header="Header 1" [selected]="true">
+            Content 1
+          </p-accordionTab>
+        </p-accordion>
       </p-card>
     </div>
   </div>

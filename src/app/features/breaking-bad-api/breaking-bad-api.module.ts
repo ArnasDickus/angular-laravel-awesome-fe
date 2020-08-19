@@ -7,6 +7,7 @@ import { CardComponent } from './components/card/card.component';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { SharedModule } from '../../shared/shared.module';
+import { AccordionModule } from 'primeng';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SharedModule } from '../../shared/shared.module';
     ReactiveFormsModule,
     CardModule,
     ButtonModule,
-    SharedModule
+    SharedModule,
+    AccordionModule
   ]
 })
 // @ts-ignore

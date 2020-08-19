@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { AuthenticationComponent } from './layouts/authentication/authentication.component';
 import { RouterModule } from '@angular/router';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { AccordionModule } from 'primeng/accordion';
 
 
 @NgModule({
@@ -12,7 +13,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    AccordionModule
   ]
 })
 // @ts-ignore
