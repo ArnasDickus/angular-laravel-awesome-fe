@@ -1,8 +1,8 @@
-import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 import { BreakingBadApiService } from '@core/services/breaking-bad-api/breaking-bad-api.service';
-import { SearchFormComponent } from '@features/breaking-bad-api/components/search-form/search-form.component';
+import { Options } from '@core/interfaces/options';
 
 @Component({
   selector: 'app-home',
@@ -15,6 +15,7 @@ export class HomeComponent implements OnInit {
   public fetchedData: Characters[];
   public form: FormGroup;
   public isDataLoaded = false;
+  public filteredOccupationsOptions: Options[]  = [];
 
   constructor(
     private breakingBadApiService: BreakingBadApiService
@@ -61,22 +62,35 @@ export class HomeComponent implements OnInit {
         this.isDataLoaded = true;
         this.fetchedData = task;
         this.filteredData = task;
+        this.findAllPairOccupations(task);
       }
     });
   }
 
   private filterByShow(filter): void {
     if (filter.breakingBad[0]) {
-      console.log('Breaking Bad');
       this.filteredData = this.filteredData.filter(
         data => data.category.match('Breaking Bad'));
     }
 
     if (filter.betterCallSaul[0]) {
-      console.log('better call Saul');
       this.filteredData = this.filteredData.filter(
         data => data.category.match('Better Call Saul'));
     }
   }
+  // Filter
+  private findAllPairOccupations(task): void {
+    task.forEach((person) => {
+      person.occupation.map((occupation) => {
+        // add if statement. Get values that are not unique.
+        // if() {
+          this.filteredOccupationsOptions.push({
+            label: occupation,
+            value: occupation
+          });
+        // }
+          console.log(occupation);
+      });
+    });
+  }
 }
-

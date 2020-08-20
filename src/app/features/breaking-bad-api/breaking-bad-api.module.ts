@@ -9,6 +9,7 @@ import { ButtonModule } from 'primeng/button';
 import { SharedModule } from '../../shared/shared.module';
 import { SearchFormComponent } from './components/search-form/search-form.component';
 import { CheckboxModule } from 'primeng/checkbox';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [HomeComponent, CardComponent, SearchFormComponent, SearchFormComponent],
@@ -19,7 +20,8 @@ import { CheckboxModule } from 'primeng/checkbox';
     CardModule,
     ButtonModule,
     SharedModule,
-    CheckboxModule
+    CheckboxModule,
+    DropdownModule
   ]
 })
 // @ts-ignore

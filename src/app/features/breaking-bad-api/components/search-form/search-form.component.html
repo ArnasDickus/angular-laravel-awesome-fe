@@ -42,6 +42,14 @@
           </p-checkbox>
         </div>
       </div>
+
+      <h2 class="mt-4">Search by profession</h2>
+
+      <p-dropdown
+        (onChange)="onChange(form.value)"
+        [options]="occupation"
+        formControlName="searchByOccupation">
+      </p-dropdown>
     </p-accordionTab>
   </p-accordion>
 </form>

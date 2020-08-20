@@ -10,6 +10,13 @@ export class SearchFormComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
   public searchQuery = '';
   public form: FormGroup;
+  public occupation: any = [
+    {label: 'New York', value: 'NY'},
+    {label: 'Rome', value: 'RM'},
+    {label: 'London', value: 'LDN'},
+    {label: 'Istanbul', value: 'IST'},
+    {label: 'Paris', value: 'PRS'}
+  ];
 
   constructor(
     private formBuilder: FormBuilder
@@ -31,6 +38,7 @@ export class SearchFormComponent implements OnInit {
         breakingBad: '',
         betterCallSaul: ''
       }),
+      searchByOccupation: '',
     });
   }
 }
