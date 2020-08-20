@@ -39,6 +39,8 @@ export class HomeComponent implements OnInit {
         data => data.nickname.toLocaleLowerCase()
           .match(filter.searchByNickname.toLowerCase()));
     }
+
+    this.filterByShow(filter);
     // TODO Every time there is a change. I need to get this.form.value
     // Create search: It should contain:
     // 1) Search by Name.
@@ -59,6 +61,10 @@ export class HomeComponent implements OnInit {
         this.filteredData = task;
       }
     });
+  }
+
+  private filterByShow(filter): void {
+    console.log('filter');
   }
 }
 

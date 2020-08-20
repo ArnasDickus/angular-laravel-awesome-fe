@@ -9,7 +9,9 @@ import { RadioButtonModule } from 'primeng/radiobutton';
 @NgModule({
   declarations: [AuthenticationComponent, SpinnerComponent],
   exports: [
-    SpinnerComponent
+    SpinnerComponent,
+    RadioButtonModule,
+    AccordionModule,
   ],
   imports: [
     CommonModule,

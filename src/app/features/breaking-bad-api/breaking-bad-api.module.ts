@@ -7,9 +7,8 @@ import { CardComponent } from './components/card/card.component';
 import { CardModule } from 'primeng/card';
 import { ButtonModule } from 'primeng/button';
 import { SharedModule } from '../../shared/shared.module';
-import { AccordionModule } from 'primeng';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-
+import { CheckboxModule } from 'primeng/checkbox';
 
 @NgModule({
   declarations: [HomeComponent, CardComponent, SearchFormComponent, SearchFormComponent],
@@ -20,7 +19,7 @@ import { SearchFormComponent } from './components/search-form/search-form.compon
     CardModule,
     ButtonModule,
     SharedModule,
-    AccordionModule
+    CheckboxModule
   ]
 })
 // @ts-ignore

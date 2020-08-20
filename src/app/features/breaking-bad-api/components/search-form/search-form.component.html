@@ -18,6 +18,37 @@
           placeholder="Search By Nickname"
           (input)="onChange(form.value)" >
       </label>
+
+      <h2 class="mt-2"> Search by Show </h2>
+
+      <div class="d-flex justify-content-center radio__label-margin--0">
+        <div class="mr-3 mb-0">
+          <p-checkbox
+            name="groupname"
+            [value]="breakingBadRadioValue"
+            label="Breaking Bad"
+            [formControl]="this.form.get('searchByShow.breakingBad')">
+          </p-checkbox>
+        </div>
+
+        <div class="mr-3 mb-0">
+          <p-checkbox
+            name="groupname"
+            [value]="betterCallSaulRadioValue"
+            label="Better Call Saul"
+            [formControl]="this.form.get('searchByShow.betterCallSaul')">
+          </p-checkbox>
+        </div>
+
+        <div class="mr-3 mb-0">
+          <p-checkbox
+            name="groupname"
+            [value]="crossoverValue"
+            label="Only crossover"
+            [formControl]="this.form.get('searchByShow.crossover')">
+          </p-checkbox>
+        </div>
+      </div>
     </p-accordionTab>
   </p-accordion>
 </form>
