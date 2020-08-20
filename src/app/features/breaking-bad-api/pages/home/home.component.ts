@@ -26,6 +26,8 @@ export class HomeComponent implements OnInit {
   }
 
   public filterSearchData(filter): void {
+    const { searchByShow } = filter;
+
     this.filteredData = this.fetchedData;
 
     if (filter.searchByName !== '') {
@@ -40,7 +42,7 @@ export class HomeComponent implements OnInit {
           .match(filter.searchByNickname.toLowerCase()));
     }
 
-    this.filterByShow(filter);
+    this.filterByShow(searchByShow);
     // TODO Every time there is a change. I need to get this.form.value
     // Create search: It should contain:
     // 1) Search by Name.
@@ -64,7 +66,17 @@ export class HomeComponent implements OnInit {
   }
 
   private filterByShow(filter): void {
-    console.log('filter');
+    if (filter.breakingBad[0]) {
+      console.log('Breaking Bad');
+      this.filteredData = this.filteredData.filter(
+        data => data.category.match('Breaking Bad'));
+    }
+
+    if (filter.betterCallSaul[0]) {
+      console.log('better call Saul');
+      this.filteredData = this.filteredData.filter(
+        data => data.category.match('Better Call Saul'));
+    }
   }
 }
 

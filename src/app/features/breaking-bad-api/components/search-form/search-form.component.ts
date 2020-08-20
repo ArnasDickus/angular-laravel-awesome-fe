@@ -1,6 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { searchByShowEnum } from '@core/enums/breaking-bad-api/searchbyshow.enum';
 
 @Component({
   selector: 'app-search-form',
@@ -9,9 +8,6 @@ import { searchByShowEnum } from '@core/enums/breaking-bad-api/searchbyshow.enum
 })
 export class SearchFormComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
-  public breakingBadRadioValue = searchByShowEnum.BREAKINGBAD;
-  public betterCallSaulRadioValue = searchByShowEnum.BETTERCALLSAUL;
-  public crossoverValue = searchByShowEnum.CROSSOVER;
   public searchQuery = '';
   public form: FormGroup;
 
@@ -25,7 +21,6 @@ export class SearchFormComponent implements OnInit {
 
   public onChange(filters: any): void {
     this.searchEvent.emit(filters);
-    console.log(this.form.value);
   }
 
   private buildForm(): void {
@@ -33,9 +28,8 @@ export class SearchFormComponent implements OnInit {
       searchByName: [''],
       searchByNickname: [''],
       searchByShow: this.formBuilder.group( {
-        breakingBad: [''],
-        betterCallSaul: [''],
-        crossover: ['']
+        breakingBad: '',
+        betterCallSaul: ''
       }),
     });
   }
