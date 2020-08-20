@@ -4,7 +4,9 @@
   </div>
 
   <div class="text-center pt-5 container">
-    <app-search-form></app-search-form>
+    <app-search-form
+      (searchEvent)="getSearchData($event)"
+    ></app-search-form>
   </div>
 
   <div class="container mt-5">
