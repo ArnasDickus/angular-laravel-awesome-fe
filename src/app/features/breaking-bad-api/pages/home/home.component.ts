@@ -11,7 +11,8 @@ import { SearchFormComponent } from '@features/breaking-bad-api/components/searc
 })
 export class HomeComponent implements OnInit {
   // TODO Docs https://github.com/haykoyaghubyan/angular-data-filters/blob/master/src/app/pipe/filter.pipe.ts
-  @Input() public fetchedData: Characters[];
+  @Input() public filteredData: Characters[];
+  public fetchedData: Characters[];
   public form: FormGroup;
   public searchByName: string;
   public isDataLoaded = false;
@@ -41,7 +42,7 @@ export class HomeComponent implements OnInit {
 
   private fetchData(): void {
     this.isDataLoaded = false;
-    this.breakingBadApiService.fetchByName(this.searchByName).subscribe((task: Characters[]) => {
+    this.breakingBadApiService.fetchAllCharacters().subscribe((task: Characters[]) => {
       if (task) {
         this.isDataLoaded = true;
         this.fetchedData = task;

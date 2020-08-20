@@ -1,7 +1,5 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { BreakingBadApiService } from '@core/services/breaking-bad-api/breaking-bad-api.service';
-import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 
 @Component({
   selector: 'app-search-form',
@@ -29,7 +27,6 @@ export class SearchFormComponent implements OnInit {
     this.form = this.formBuilder.group({
       searchByName: [''],
       searchByNickname: [''],
-
     });
   }
 }

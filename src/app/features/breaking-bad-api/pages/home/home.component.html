@@ -5,8 +5,8 @@
 
   <div class="text-center pt-5 container">
     <app-search-form
-      (searchEvent)="getSearchData($event)"
-    ></app-search-form>
+      (searchEvent)="getSearchData($event)">
+    </app-search-form>
   </div>
 
   <div class="container mt-5">
@@ -15,7 +15,7 @@
     </ng-container>
 
     <app-card
-      [fetchedData]="fetchedData">
+      [filteredData]="filteredData">
     </app-card>
   </div>
 </div>

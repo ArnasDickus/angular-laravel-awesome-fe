@@ -7,13 +7,13 @@ import { Characters } from '@core/interfaces/breaking-bad-api/characters';
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() public fetchedData: Characters[];
+  @Input() public filteredData: Characters[];
 
   constructor() { }
 
   ngOnInit(): void {
     setTimeout(() => {
-      console.log(this.fetchedData);
+      console.log(this.filteredData);
     }, 2000);
   }
 
