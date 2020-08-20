@@ -11,10 +11,9 @@ import { SearchFormComponent } from '@features/breaking-bad-api/components/searc
 })
 export class HomeComponent implements OnInit {
   // TODO Docs https://github.com/haykoyaghubyan/angular-data-filters/blob/master/src/app/pipe/filter.pipe.ts
-  @Input() public filteredData: Characters[];
+  public filteredData: Characters[];
   public fetchedData: Characters[];
   public form: FormGroup;
-  public searchByName: string;
   public isDataLoaded = false;
 
   constructor(
@@ -26,9 +25,20 @@ export class HomeComponent implements OnInit {
     this.fetchData();
   }
 
-  public getSearchData(data): void {
-    this.searchByName = data.searchByName;
-    this.fetchData();
+  public filterSearchData(filter): void {
+    this.filteredData = this.fetchedData;
+
+    if (filter.searchByName !== '') {
+      this.filteredData = this.filteredData.filter(
+        data => data.name.toLocaleLowerCase()
+        .match(filter.searchByName.toLowerCase()));
+    }
+
+    if (filter.searchByNickname !== '') {
+      this.filteredData = this.filteredData.filter(
+        data => data.nickname.toLocaleLowerCase()
+          .match(filter.searchByNickname.toLowerCase()));
+    }
     // TODO Every time there is a change. I need to get this.form.value
     // Create search: It should contain:
     // 1) Search by Name.
@@ -46,6 +56,7 @@ export class HomeComponent implements OnInit {
       if (task) {
         this.isDataLoaded = true;
         this.fetchedData = task;
+        this.filteredData = task;
       }
     });
   }

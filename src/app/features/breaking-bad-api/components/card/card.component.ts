@@ -8,7 +8,6 @@ import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 })
 export class CardComponent implements OnInit {
   @Input() public filteredData: Characters[];
-
   constructor() { }
 
   ngOnInit(): void {
