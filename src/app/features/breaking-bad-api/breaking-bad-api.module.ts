@@ -25,5 +25,5 @@ import { DropdownModule } from 'primeng/dropdown';
     FormsModule
   ]
 })
-// @ts-ignore
+
 export class BreakingBadApiModule { }

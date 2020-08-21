@@ -20,5 +20,5 @@ import { SharedModule } from '../../shared/shared.module';
     SharedModule
   ]
 })
-// @ts-ignore
+
 export class AuthenticationModule { }

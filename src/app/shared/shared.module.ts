@@ -20,5 +20,5 @@ import { RadioButtonModule } from 'primeng/radiobutton';
     RadioButtonModule
   ]
 })
-// @ts-ignore
+
 export class SharedModule { }

@@ -10,5 +10,5 @@ import { NotFoundRoutingModule } from './not-found-routing.module';
     NotFoundRoutingModule
   ]
 })
-// @ts-ignore
+
 export class NotFoundModule { }

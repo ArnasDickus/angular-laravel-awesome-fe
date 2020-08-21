@@ -12,5 +12,5 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule
   ]
 })
-// @ts-ignore
+
 export class TodoModule { }
