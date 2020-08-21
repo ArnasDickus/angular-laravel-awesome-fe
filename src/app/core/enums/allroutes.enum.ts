@@ -4,5 +4,6 @@ export enum AllRoutes {
   FORGOTPASSWORD = 'forgot-password',
   LOGIN = 'login',
   ADMIN = 'admin',
-  AUTH = 'auth'
+  AUTH = 'auth',
+  BREAKINGBADAPI = 'breaking-bad-api'
 }

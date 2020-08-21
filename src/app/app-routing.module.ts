@@ -12,6 +12,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/todo/todo.module').then(m => m.TodoModule)
   },
   {
+    path: AllRoutes.BREAKINGBADAPI,
+    loadChildren: () => import('./features/breaking-bad-api/breaking-bad-api.module').then(m => m.BreakingBadApiModule)
+  },
+  {
     path: '**',
     loadChildren: () => import('./features/not-found/not-found.module').then(m => m.NotFoundModule)
   }

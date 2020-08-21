@@ -8,12 +8,13 @@ import { AllRoutes } from '../../enums/allroutes.enum';
 })
 export class HeaderComponent implements OnInit {
   public todoRoute = AllRoutes.TODO;
+  public breakingBadAPI = AllRoutes.BREAKINGBADAPI;
   public registerRoute = `${AllRoutes.AUTH}/${AllRoutes.REGISTER}`;
   public loginRoute = `${AllRoutes.AUTH}/${AllRoutes.LOGIN}`;
 
   constructor() { }
 
-  ngOnInit(): void {
+  public ngOnInit(): void {
   }
 
 }
