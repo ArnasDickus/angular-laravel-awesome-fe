@@ -1,12 +1,13 @@
 <form [formGroup]="form">
-  <label>
-    <input
-      formControlName="searchByName"
-      type="text"
-      class="form-control"
-      placeholder="Search By Name"
-      (input)="onChange(form.value)" >
-  </label>
+  <div>
+    <label class="d-none">Search by Name</label>
+      <input
+        formControlName="searchByName"
+        type="text"
+        placeholder="Enter Name"
+        class="form-control"
+        (input)="onChange(form.value)" >
+  </div>
 
   <p-accordion>
     <p-accordionTab header="Advanced search" [selected]="false">
