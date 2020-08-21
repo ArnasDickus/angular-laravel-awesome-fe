@@ -3,6 +3,7 @@ import { FormGroup } from '@angular/forms';
 import { Characters } from '@core/interfaces/breaking-bad-api/characters';
 import { BreakingBadApiService } from '@core/services/breaking-bad-api/breaking-bad-api.service';
 import { Options } from '@core/interfaces/options';
+import { Mortality } from '@core/enums/breaking-bad-api/mortality.enum';
 
 @Component({
   selector: 'app-home',
@@ -51,6 +52,7 @@ export class HomeComponent implements OnInit {
 
     this.filterByShow(searchByShow);
     this.filterByProfession(filter);
+    this.filterByRIP(filter);
     // TODO Every time there is a change. I need to get this.form.value
     // Create search: It should contain:
     // 1) Search by Name.
@@ -93,7 +95,24 @@ export class HomeComponent implements OnInit {
           .every(occupation => occupation.includes(form.searchByOccupation)));
       }
     }
-  // Filter
+
+  private filterByRIP(form): void {
+    if (form.searchByRIP !== Mortality.ALL) {
+      if (form.searchByRIP === Mortality.ALIVE) {
+        this.filteredData = this.filteredData
+          .filter(person => person.status ===  Mortality.ALIVE);
+
+      } else if (form.searchByRIP === Mortality.DECEASED) {
+        this.filteredData = this.filteredData
+          .filter(person => person.status ===  Mortality.DECEASED);
+
+      } else if (form.searchByRIP === Mortality.UNKNOWN) {
+        this.filteredData = this.filteredData
+          .filter(person => person.status !==  Mortality.DECEASED && person.status !== Mortality.ALIVE);
+      }
+    }
+  }
+
   private findAllPairOccupations(task): void {
     // Get all occupations
     task.forEach((person) => {

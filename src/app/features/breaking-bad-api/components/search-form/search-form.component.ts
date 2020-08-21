@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { Options } from '@core/interfaces/options';
+import { Mortality } from '@core/enums/breaking-bad-api/mortality.enum';
 
 @Component({
   selector: 'app-search-form',
@@ -10,6 +11,24 @@ import { Options } from '@core/interfaces/options';
 export class SearchFormComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
   @Input() filteredOccupationsOptions: Options[];
+  public mortalityOptions: Options[] = [
+    {
+      label: Mortality.ALL,
+      value: Mortality.ALL
+    },
+    {
+      label: Mortality.ALIVE,
+      value: Mortality.ALIVE
+    },
+    {
+      label: Mortality.DECEASED,
+      value: Mortality.DECEASED
+    },
+    {
+      label: Mortality.UNKNOWN,
+      value: Mortality.UNKNOWN
+    },
+  ];
 
   public searchQuery = '';
   public form: FormGroup;
@@ -34,11 +53,7 @@ export class SearchFormComponent implements OnInit {
         breakingBad: '',
         betterCallSaul: ''
       }),
-      searchByRIP: this.formBuilder.group( {
-        alive: '',
-        deceased: '',
-        unknown: '',
-      }),
+      searchByRIP: '',
       searchByOccupation: '',
     });
   }
