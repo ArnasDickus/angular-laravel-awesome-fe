@@ -11,10 +11,11 @@ import { Options } from '@core/interfaces/options';
 })
 export class HomeComponent implements OnInit {
   // TODO Docs https://github.com/haykoyaghubyan/angular-data-filters/blob/master/src/app/pipe/filter.pipe.ts
-  public filteredData: Characters[];
+  public filteredData: any;
   public fetchedData: Characters[];
   public form: FormGroup;
   public isDataLoaded = false;
+  public allOccupations: any = [];
   public filteredOccupationsOptions: Options[]  = [];
 
   constructor(
@@ -44,6 +45,7 @@ export class HomeComponent implements OnInit {
     }
 
     this.filterByShow(searchByShow);
+    this.filterByProfession(filter);
     // TODO Every time there is a change. I need to get this.form.value
     // Create search: It should contain:
     // 1) Search by Name.
@@ -78,19 +80,41 @@ export class HomeComponent implements OnInit {
         data => data.category.match('Better Call Saul'));
     }
   }
+
+  private filterByProfession(form): void {
+    this.filteredData = this.filteredData
+      .filter(person => person.occupation
+      .every(occupation => occupation.includes(form.searchByOccupation)));
+    }
+
   // Filter
   private findAllPairOccupations(task): void {
+    // Get all occupations
     task.forEach((person) => {
       person.occupation.map((occupation) => {
-        // add if statement. Get values that are not unique.
-        // if() {
-          this.filteredOccupationsOptions.push({
+          this.allOccupations.push({
             label: occupation,
             value: occupation
           });
-        // }
-          console.log(occupation);
       });
+    });
+
+    // Remove all unique values.
+    for (let i = 0; i < this.allOccupations.length - 1; i++) {
+      if (this.allOccupations[i + 1].value === this.allOccupations[i].value) {
+       this.filteredOccupationsOptions.push(this.allOccupations[i]);
+      }
+    }
+
+    // Remove duplicate values
+    this.filteredOccupationsOptions = [...new Set(this.filteredOccupationsOptions
+      .map(({value}) => value))]
+      .map(e => this.filteredOccupationsOptions.
+      find(({value}) => value === e));
+
+  //  Remove unknown value
+    this.filteredOccupationsOptions = this.filteredOccupationsOptions.filter((option) => {
+      return option.label !== 'unknown';
     });
   }
 }

@@ -1,5 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Options } from '@core/interfaces/options';
 
 @Component({
   selector: 'app-search-form',
@@ -8,15 +9,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 })
 export class SearchFormComponent implements OnInit {
   @Output() searchEvent = new EventEmitter<string>();
+  @Input() filteredOccupationsOptions: Options[];
+
   public searchQuery = '';
   public form: FormGroup;
-  public occupation: any = [
-    {label: 'New York', value: 'NY'},
-    {label: 'Rome', value: 'RM'},
-    {label: 'London', value: 'LDN'},
-    {label: 'Istanbul', value: 'IST'},
-    {label: 'Paris', value: 'PRS'}
-  ];
 
   constructor(
     private formBuilder: FormBuilder

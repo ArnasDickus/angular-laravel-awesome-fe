@@ -5,7 +5,8 @@
 
   <div class="text-center pt-5 container">
     <app-search-form
-      (searchEvent)="filterSearchData($event)">
+      (searchEvent)="filterSearchData($event)"
+      [filteredOccupationsOptions]="filteredOccupationsOptions" >
     </app-search-form>
   </div>
 
