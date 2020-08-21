@@ -16,7 +16,12 @@ export class HomeComponent implements OnInit {
   public form: FormGroup;
   public isDataLoaded = false;
   public allOccupations: any = [];
-  public filteredOccupationsOptions: Options[]  = [];
+  public filteredOccupationsOptions: Options[]  = [
+    {
+      label: 'All',
+      value: 'all'
+    }
+  ];
 
   constructor(
     private breakingBadApiService: BreakingBadApiService
@@ -82,11 +87,12 @@ export class HomeComponent implements OnInit {
   }
 
   private filterByProfession(form): void {
-    this.filteredData = this.filteredData
-      .filter(person => person.occupation
-      .every(occupation => occupation.includes(form.searchByOccupation)));
+    if (form.searchByOccupation !== 'all') {
+      this.filteredData = this.filteredData
+        .filter(person => person.occupation
+          .every(occupation => occupation.includes(form.searchByOccupation)));
+      }
     }
-
   // Filter
   private findAllPairOccupations(task): void {
     // Get all occupations

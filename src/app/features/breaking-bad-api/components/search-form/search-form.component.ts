@@ -34,6 +34,11 @@ export class SearchFormComponent implements OnInit {
         breakingBad: '',
         betterCallSaul: ''
       }),
+      searchByRIP: this.formBuilder.group( {
+        alive: '',
+        deceased: '',
+        unknown: '',
+      }),
       searchByOccupation: '',
     });
   }
